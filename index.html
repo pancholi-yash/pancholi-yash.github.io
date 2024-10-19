@@ -29,13 +29,45 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: PhotoFolio
-  * Template URL: https://bootstrapmade.com/photofolio-bootstrap-photography-website-template/
-  * Updated: Mar 17 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+  <!-- Custom CSS for gallery text and zoom effect -->
+  <style>
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .gallery-item a {
+      display: block;
+      position: relative;
+    }
+
+    .gallery-item video,
+    .gallery-item img {
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .gallery-text {
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      color: white;
+      font-size: 1.2rem;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 5px 10px;
+      border-radius: 5px;
+    }
+
+    .gallery-item:active video,
+    .gallery-item:active img {
+      transform: scale(1.1);
+    }
+
+    .gallery-item.zoom-out video,
+    .gallery-item.zoom-out img {
+      transform: scale(0.9);
+    }
+  </style>
+
 </head>
 
 <body>
@@ -43,11 +75,7 @@
   <!-- ======= Header ======= -->
   <header id="header" class="header d-flex align-items-center fixed-top">
     <div class="container-fluid d-flex align-items-center justify-content-between">
-
       <a href="index.html" class="logo d-flex align-items-center  me-auto me-lg-0">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
-        <!-- <img src="assets/img/logo.png" alt=""> -->
-        <!-- <i class="bi bi-camera"></i> -->
         <h1>Yash Pancholi</h1>
       </a>
 
@@ -57,28 +85,25 @@
           <li><a href="about.html">About</a></li>
           <li class="dropdown"><a href="#"><span>Gallery</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
             <ul>
-              <li><a href="video.html" >Video</a></li>
-              <li><a href="logo.html" >Logo</a></li>
-              <li><a href="logo-animation.html" >Logo Animation</a></li>
+              <li><a href="video.html">Video</a></li>
+              <li><a href="logo.html">Logo</a></li>
+              <li><a href="logo-animation.html">Logo Animation</a></li>
               <li><a href="graphics.html">Short Form Content</a></li>
-              <li><a href="thumbnail.html" >Thumbnail</a></li>
-              <li><a href="branding.html" >Brand Identity</a></li>
+              <li><a href="thumbnail.html">Thumbnail</a></li>
+              <li><a href="branding.html">Brand Identity</a></li>
             </ul>
           </li>
           <li><a href="services.html">Services</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
-      </nav><!-- .navbar -->
+      </nav>
 
       <div class="header-social-links">
-        <!-- <a href="#" class="twitter"><i class="bi bi-twitter"></i></a> -->
-        <!-- <a href="#" class="facebook"><i class="bi bi-facebook"></i></a> -->
         <a href="https://www.instagram.com/yash_pancholi_37?igsh=MWp4MHExZHB3amJx" class="instagram"><i class="bi bi-instagram"></i></a>
         <a href="https://www.linkedin.com/in/pancholi-yash-b16179259?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
       </div>
       <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
       <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
-
     </div>
   </header><!-- End Header -->
 
@@ -100,14 +125,12 @@
     <!-- ======= Gallery Section ======= -->
     <section id="gallery" class="gallery">
       <div class="container-fluid">
-
         <div class="row gy-4 justify-content-center">
           <div class="col-xl-4 col-lg-4 col-md-6">
             <div class="gallery-item h-100">
               <a href="logo-animation.html">
-                <!-- <img src="assets/img/posters/1.png" class="img-fluid" alt=""> -->
                 <video src="assets/img/previews/log animation.mp4" autoplay muted width="100%" loop></video>
-
+                <div class="gallery-text">Logo Animation</div>
               </a>
             </div>
           </div><!-- End Gallery Item -->
@@ -115,8 +138,8 @@
           <div class="col-xl-4 col-lg-4 col-md-6">
             <div class="gallery-item h-100">
               <a href="video.html">
-                <!-- <img src="assets/img/posters/2.png" class="img-fluid" alt=""> -->
                 <video src="assets/img/previews/video.mp4" autoplay muted width="100%" loop></video>
+                <div class="gallery-text">Video Editing</div>
               </a>
             </div>
           </div><!-- End Gallery Item -->
@@ -124,8 +147,8 @@
           <div class="col-xl-4 col-lg-4 col-md-6">
             <div class="gallery-item h-100">
               <a href="logo.html">
-                <!-- <img src="assets/img/posters/3.png" class="img-fluid" alt=""> -->
                 <video src="assets/img/previews/logo.mp4" autoplay muted width="100%" loop></video>
+                <div class="gallery-text">Logo Design</div>
               </a>
             </div>
           </div><!-- End Gallery Item -->
@@ -133,8 +156,8 @@
           <div class="col-xl-4 col-lg-4 col-md-6">
             <div class="gallery-item h-100">
               <a href="branding.html">
-                <!-- <img src="assets/img/posters/4.png" class="img-fluid" alt=""> -->
                 <img src="assets/img/previews/brand-identity-preview.jfif" class="img-fluid" alt="">
+                <div class="gallery-text">Brand Identity</div>
               </a>
             </div>
           </div><!-- End Gallery Item -->
@@ -142,8 +165,8 @@
           <div class="col-xl-4 col-lg-4 col-md-6">
             <div class="gallery-item h-100">
               <a href="thumbnail.html">
-                <!-- <img src="assets/img/posters/5.png" class="img-fluid" alt=""> -->
                 <video src="assets/img/previews/thumbna1il.mp4" autoplay muted width="100%" loop></video>
+                <div class="gallery-text">Thumbnail Creation</div>
               </a>
             </div>
           </div><!-- End Gallery Item -->
@@ -151,15 +174,13 @@
           <div class="col-xl-4 col-lg-4 col-md-6">
             <div class="gallery-item h-100">
               <a href="graphics.html">
-                <!-- <img src="assets/img/posters/6.png" class="img-fluid" alt=""> -->
                 <video src="assets/img/previews/reel.mp4" autoplay muted width="100%" loop></video>
-
+                <div class="gallery-text">Short Form Content</div>
               </a>
             </div>
           </div><!-- End Gallery Item -->
 
         </div>
-
       </div>
     </section><!-- End Gallery Section -->
 
@@ -172,20 +193,10 @@
         &copy; Copyright <strong><span>PhotoFolio</span></strong>. All Rights Reserved
       </div>
       <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/photofolio-bootstrap-photography-website-template/ -->
         Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
       </div>
     </div>
   </footer><!-- End Footer -->
-
-  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-  <div id="preloader">
-    <div class="line"></div>
-  </div>
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -196,6 +207,21 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+
+  <!-- Custom JavaScript for Zoom Effect -->
+  <script>
+    document.querySelectorAll('.gallery-item').forEach(item => {
+      item.addEventListener('mousedown', function () {
+        this.classList.add('zoom-out');
+      });
+
+      item.addEventListener('mouseup', function () {
+        setTimeout(() => {
+          this.classList.remove('zoom-out');
+        }, 300);
+      });
+    });
+  </script>
 
 </body>
 
