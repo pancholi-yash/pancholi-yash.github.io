@@ -77,6 +77,10 @@
         <!-- <a href="#" class="facebook"><i class="bi bi-facebook"></i></a> -->
         <a href="https://www.instagram.com/yash_pancholi_37?igsh=MWp4MHExZHB3amJx" class="instagram"><i class="bi bi-instagram"></i></a>
         <a href="https://www.linkedin.com/in/pancholi-yash-b16179259?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
+        <a href="https://www.youtube.com/@ARC-Documentry" class="youtube" target="_blank" rel="noopener noreferrer">
+          <i class="bi bi-youtube"></i>
+        </a>
+        
       </div>
       <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
       <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
@@ -105,7 +109,9 @@
     <section id="gallery" class="gallery">
       <div class="container-fluid">
 
-        <div class="row gy-4 justify-content-center">
+        <div class="row gy-4 justify-content-center" id="gallery-container">
+        <div class="row gy-4 justify-content-center" id="gallery-container">
+
           <div class="col-xl-3 col-lg-4 col-md-6">
             <div class="gallery-item h-100">
               <img   src="https://res.cloudinary.com/dkodvlw5s/image/upload/v1737427617/1_gipsva.png" class="img-fluid" alt="">
@@ -431,9 +437,6 @@
         </div>
     </div>
   </div><!-- End Gallery Item -->
-              <div class="col-xl-3 col-lg-4 col-md-6"></div>
-              <div class="col-xl-3 col-lg-4 col-md-6"></div>
-              <div class="col-xl-3 col-lg-4 col-md-6"></div>
         </div>
 
         
@@ -464,7 +467,72 @@
   <div id="preloader">
     <div class="line"></div>
   </div>
+  <script>
+    function generateGallery(images) {
+  const container = document.getElementById('gallery-container');
+  // Clear any existing content
+  container.innerHTML = '';
+  images.forEach((url, index) => {
+    // Create the gallery item
+    const galleryItem = document.createElement('div');
+    galleryItem.className = 'col-xl-3 col-lg-4 col-md-6';
 
+    galleryItem.innerHTML = `
+      <div class="gallery-item h-100">
+        <img src="${url}" class="img-fluid" alt="Thumbnail ${index + 1}">
+        <div class="gallery-links d-flex align-items-center justify-content-center">
+          <a href="${url}" title="Thumbnail ${index + 1}" class="glightbox preview-link">
+            <i class="bi bi-arrows-angle-expand"></i>
+          </a>
+        </div>
+      </div>
+    `;
+
+    // Append the gallery item to the container
+    container.appendChild(galleryItem);
+  });
+}
+
+// Example usage
+const imageUrls = [
+    "https://res.cloudinary.com/dkodvlw5s/image/upload/v1737427617/1_gipsva.png",
+    "https://res.cloudinary.com/dkodvlw5s/image/upload/v1737427616/2_bdoh9s.png",
+    "https://res.cloudinary.com/dkodvlw5s/image/upload/v1737427617/3_q1bvhu.jpg",
+    "https://res.cloudinary.com/dkodvlw5s/image/upload/v1737427618/4_quskhm.jpg",
+    "https://res.cloudinary.com/dkodvlw5s/image/upload/v1737427618/5_vxn5se.jpg",
+    "https://res.cloudinary.com/dkodvlw5s/image/upload/v1737427620/6_eio16e.jpg",
+    "https://res.cloudinary.com/dkodvlw5s/image/upload/v1737427617/7_bb3kkz.jpg",
+    "https://res.cloudinary.com/dkodvlw5s/image/upload/v1737427620/8_rwrklf.jpg",
+    "https://res.cloudinary.com/dkodvlw5s/image/upload/v1737427618/9_lbhsjd.png",
+    "https://res.cloudinary.com/dkodvlw5s/image/upload/v1737427624/10_ozxj05.jpg",
+    "https://res.cloudinary.com/dkodvlw5s/image/upload/v1737427626/11_bkelts.jpg",
+    "https://res.cloudinary.com/dkodvlw5s/image/upload/v1737427625/12_lplpat.jpg",
+    "https://res.cloudinary.com/dkodvlw5s/image/upload/v1737427627/13_fvyiuy.jpg",
+    "https://res.cloudinary.com/dkodvlw5s/image/upload/v1737427626/14_bkopzs.jpg",
+    "https://res.cloudinary.com/dkodvlw5s/image/upload/v1737427628/15_a2m6jq.jpg",
+    "https://res.cloudinary.com/dkodvlw5s/image/upload/v1737427628/16_cyi1v1.jpg",
+    "https://res.cloudinary.com/dkodvlw5s/image/upload/v1737427633/17_nhbf28.jpg",
+    "https://res.cloudinary.com/dkodvlw5s/image/upload/v1737427633/18_cixzyl.jpg",
+    "https://res.cloudinary.com/dkodvlw5s/image/upload/v1737427635/19_hzphzv.jpg",
+    "https://res.cloudinary.com/dkodvlw5s/image/upload/v1737427633/20_vhv9sh.jpg",
+    "https://res.cloudinary.com/dkodvlw5s/image/upload/v1737427635/21_yrprhw.jpg",
+    "https://res.cloudinary.com/dkodvlw5s/image/upload/v1737427636/22_s3tnh0.jpg",
+    "https://res.cloudinary.com/dkodvlw5s/image/upload/v1737427636/23_gblz7q.jpg",
+    "https://res.cloudinary.com/dkodvlw5s/image/upload/v1737427638/24_ihtyqo.jpg",
+    "https://res.cloudinary.com/dkodvlw5s/image/upload/v1737427637/25_kr7sce.jpg",
+    "https://res.cloudinary.com/dkodvlw5s/image/upload/v1737427639/26_wlnu0l.jpg",
+    "https://res.cloudinary.com/dkodvlw5s/image/upload/v1737427642/27_hgavpr.jpg",
+    "https://res.cloudinary.com/dkodvlw5s/image/upload/v1737427642/28_ntmuek.jpg",
+    "https://res.cloudinary.com/dkodvlw5s/image/upload/v1737427643/29_ugdmtt.jpg",
+    "https://res.cloudinary.com/dkodvlw5s/image/upload/v1737427642/30_l12wr4.jpg",
+    "https://res.cloudinary.com/dkodvlw5s/image/upload/v1737427644/31_ivnqyf.jpg",
+    "https://res.cloudinary.com/dkodvlw5s/image/upload/v1737427643/32_hvyzyf.jpg"
+];
+
+
+generateGallery(imageUrls);
+
+  </script>
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
